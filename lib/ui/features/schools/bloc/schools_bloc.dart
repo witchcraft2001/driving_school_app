@@ -29,6 +29,7 @@ class SchoolsBloc extends Bloc<SchoolsEvent, SchoolsState> {
           schools: [],
         )) {
     on<_OnNameChanged>((event, emit) => emit(state.copyWith(name: event.name)));
+    on<_OnSearchClicked>((event, emit) async => await _search(emit));
   }
 
   Future<void> _search(Emitter<SchoolsState> emit) async {

@@ -13,6 +13,7 @@ import 'package:planny/ui/common/app_label.dart';
 import 'package:planny/ui/common/app_textfield.dart';
 import 'package:planny/ui/features/schools/bloc/schools_bloc.dart';
 import 'package:planny/ui/features/schools/domain/entity/school_entity.dart';
+
 import '../../../generated/l10n.dart';
 
 part 'widget/school_list.dart';
@@ -86,6 +87,8 @@ class _SchoolsScreenInternal extends StatelessWidget {
               ),
               AppButton(
                 title: S.current.search,
+                onPressed: () =>
+                    context.bloc<SchoolsBloc>().add(const SchoolsEvent.onSearchClicked()),
               ),
               Expanded(
                 child: _SchoolList(

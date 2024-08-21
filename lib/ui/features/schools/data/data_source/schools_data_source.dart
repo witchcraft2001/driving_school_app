@@ -20,6 +20,9 @@ class SchoolsDataSource {
       final response = await _apiService.request(
         url: 'api/driving-school',
         method: Method.GET,
+        params: {
+          'name': name,
+        },
       );
 
       if (response.statusCode == 200) {

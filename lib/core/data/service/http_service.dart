@@ -1,15 +1,16 @@
 // Dart imports:
 import 'dart:io';
 
-// Flutter imports:
-import 'package:flutter/foundation.dart';
-
 // Package imports:
 import 'package:curl_logger_dio_interceptor/curl_logger_dio_interceptor.dart';
 import 'package:dio/dio.dart';
 
+// Flutter imports:
+import 'package:flutter/foundation.dart';
+
 // Project imports:
 import 'package:planny/core/common/exception/app_format_exception.dart';
+
 import '../../common/exception/app_exception.dart';
 import '../../common/exception/http_service_exception.dart';
 import 'log_service.dart';
@@ -39,7 +40,9 @@ abstract class HttpService {
   String get baseUrl;
 
   String _getUrl(String url) {
-    final fixedBaseUrl = baseUrl.endsWith('/') ? baseUrl : '$baseUrl/';
+    final baseUrlWithSchema = baseUrl.startsWith('http') ? baseUrl : 'https://$baseUrl';
+    final fixedBaseUrl =
+        baseUrlWithSchema.endsWith('/') ? baseUrlWithSchema : '$baseUrlWithSchema/';
     final fixedUrl = url.startsWith('/') && url.length > 1 ? url.substring(1) : url;
 
     return '$fixedBaseUrl$fixedUrl';

@@ -9,7 +9,6 @@ import 'package:planny/core/common/app_routes.dart';
 import 'package:planny/ui/common/theme/theme_provider.dart';
 import 'package:planny/ui/features/schools/schools_screen.dart';
 import 'generated/l10n.dart';
-import 'ui/features/splash/splash_screen.dart';
 
 class PlannyApp extends StatelessWidget {
   const PlannyApp({super.key});
