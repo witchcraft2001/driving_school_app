@@ -1,0 +1,6 @@
+{
+    "explorer.autoReveal": false,
+    "files.exclude": {
+        "**/generated": true
+    }
+}
