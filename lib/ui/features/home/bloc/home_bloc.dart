@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 // Project imports:
-import 'package:planny/core/common/extension/date_time_extensions.dart';
 import 'package:planny/core/data/interactor/lessons_interactor.dart';
 import 'package:planny/core/data/interactor/user_interactor.dart';
 import 'package:planny/core/data/service/log_service.dart';
