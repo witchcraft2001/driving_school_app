@@ -9,6 +9,13 @@
   "emailHint": "Enter your e-mail",
   "loginButton": "Login",
   "loginTitle": "Login",
+  "profileTitle": "My Profile",
   "homeTitle": "Lesson plan",
+  "changePassword": "Change Password",
+  "privacyPolicy": "Privacy Policy",
+  "notifications": "Notifications",
+  "editProfile": "Edit Profile",
+  "termsAndConditions": "Terms & Conditions",
+  "logoutButton": "Logout",
   "selectSchool": "Choose your Driving School:"
 }

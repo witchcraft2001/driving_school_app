@@ -30,12 +30,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     this._logService,
     this._lessonsInteractor,
   ) : super(const HomeState.initial()) {
-    on<_Started>((event, emit) => _init(emit));
+    on<_Started>((event, emit) async => await _init(emit));
     on<_OnDateSelected>((event, emit) async => await _onUpdateDate(event.date, emit));
   }
 
-  void _init(Emitter<HomeState> emit) {
+  Future<void> _init(Emitter<HomeState> emit) async {
     _updateState(_getViewState(), emit);
+    await _onUpdateDate(DateTime.now(), emit);
   }
 
   void _updateState(HomeViewState viewState, Emitter<HomeState> emit) {

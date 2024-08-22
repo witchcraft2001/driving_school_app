@@ -36,6 +36,7 @@ import 'package:planny/core/data/service/student_api_service.dart' as _i938;
 import 'package:planny/di/module/app_module.dart' as _i399;
 import 'package:planny/ui/features/home/bloc/home_bloc.dart' as _i376;
 import 'package:planny/ui/features/login/bloc/login_bloc.dart' as _i12;
+import 'package:planny/ui/features/profile/bloc/profile_bloc.dart' as _i179;
 import 'package:planny/ui/features/schools/bloc/schools_bloc.dart' as _i617;
 import 'package:planny/ui/features/schools/data/data_source/schools_data_source.dart'
     as _i12;
@@ -133,6 +134,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i11.LessonsInteractor(gh<_i1060.LessonsRepository>()));
     gh.lazySingleton<_i678.UserInteractor>(
         () => _i678.UserInteractor(gh<_i603.UserRepository>()));
+    gh.factory<_i179.ProfileBloc>(
+        () => _i179.ProfileBloc(gh<_i678.UserInteractor>()));
     gh.factory<_i12.LoginBloc>(() => _i12.LoginBloc(
           gh<_i50.SelectedSchoolInteractor>(),
           gh<_i639.AuthInteractor>(),

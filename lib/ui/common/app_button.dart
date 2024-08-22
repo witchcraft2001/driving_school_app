@@ -12,8 +12,8 @@ class AppButton extends StatelessWidget {
   final bool enabled;
   final VoidCallback? onPressed;
   final AppButtonStyle style;
-  final RilButtonType type;
-  final RilButtonSize size;
+  final AppButtonType type;
+  final AppButtonSize size;
   final bool fillMaxWidth;
   final Widget? leading;
   final Widget? tiled;
@@ -25,8 +25,8 @@ class AppButton extends StatelessWidget {
     this.enabled = true,
     this.onPressed,
     this.style = AppButtonStyle.base,
-    this.type = RilButtonType.primary,
-    this.size = RilButtonSize.normal,
+    this.type = AppButtonType.primary,
+    this.size = AppButtonSize.normal,
     this.leading,
     this.tiled,
     this.fillMaxWidth = true,
@@ -83,13 +83,13 @@ class AppButton extends StatelessWidget {
   TextStyle _getTextStyle(BuildContext context) {
     TextStyle textStyle;
     switch (size) {
-      case RilButtonSize.small:
+      case AppButtonSize.small:
         textStyle = _getTextStyleSmall(context);
         break;
-      case RilButtonSize.normal:
+      case AppButtonSize.normal:
         textStyle = _getTextStyleNormal(context);
         break;
-      case RilButtonSize.large:
+      case AppButtonSize.large:
         textStyle = _getTextStyleLarge(context);
         break;
     }
@@ -131,13 +131,13 @@ class AppButton extends StatelessWidget {
   double _getEdgeSize() {
     double edge;
     switch (size) {
-      case RilButtonSize.small:
+      case AppButtonSize.small:
         edge = 10;
         break;
-      case RilButtonSize.normal:
+      case AppButtonSize.normal:
         edge = 15;
         break;
-      case RilButtonSize.large:
+      case AppButtonSize.large:
         edge = 20;
         break;
     }
@@ -150,7 +150,7 @@ class AppButton extends StatelessWidget {
       return AppDecoration.brBtnOtherValue;
     }
 
-    if (size == RilButtonSize.small) return AppDecoration.brBtnSmallValue;
+    if (size == AppButtonSize.small) return AppDecoration.brBtnSmallValue;
 
     return AppDecoration.brBtnBaseValue;
   }
@@ -162,22 +162,22 @@ class AppButton extends StatelessWidget {
     Color color;
     if (style == AppButtonStyle.outline || style == AppButtonStyle.outlineSemiround) {
       switch (type) {
-        case RilButtonType.primary:
+        case AppButtonType.primary:
           color = context.theme.primary;
           break;
-        case RilButtonType.secondary:
+        case AppButtonType.secondary:
           color = context.theme.bordersAndIconsIcons;
           break;
-        case RilButtonType.danger:
+        case AppButtonType.danger:
           color = context.theme.danger;
           break;
-        case RilButtonType.info:
+        case AppButtonType.info:
           color = context.theme.info;
           break;
-        case RilButtonType.warning:
+        case AppButtonType.warning:
           color = context.theme.warning;
           break;
-        case RilButtonType.success:
+        case AppButtonType.success:
           color = context.theme.success;
           break;
       }
@@ -199,22 +199,22 @@ class AppButton extends StatelessWidget {
       color = Colors.transparent;
     } else {
       switch (type) {
-        case RilButtonType.primary:
+        case AppButtonType.primary:
           color = context.theme.primary;
           break;
-        case RilButtonType.secondary:
+        case AppButtonType.secondary:
           color = context.theme.second;
           break;
-        case RilButtonType.danger:
+        case AppButtonType.danger:
           color = context.theme.danger;
           break;
-        case RilButtonType.info:
+        case AppButtonType.info:
           color = context.theme.info;
           break;
-        case RilButtonType.warning:
+        case AppButtonType.warning:
           color = context.theme.warning;
           break;
-        case RilButtonType.success:
+        case AppButtonType.success:
           color = context.theme.predictors7;
           break;
       }
@@ -227,22 +227,22 @@ class AppButton extends StatelessWidget {
     Color color;
     if (enabled && (style == AppButtonStyle.outline || style == AppButtonStyle.outlineSemiround)) {
       switch (type) {
-        case RilButtonType.primary:
+        case AppButtonType.primary:
           color = context.theme.primary;
           break;
-        case RilButtonType.secondary:
+        case AppButtonType.secondary:
           color = context.theme.lightGrey;
           break;
-        case RilButtonType.danger:
+        case AppButtonType.danger:
           color = context.theme.danger;
           break;
-        case RilButtonType.info:
+        case AppButtonType.info:
           color = context.theme.info;
           break;
-        case RilButtonType.warning:
+        case AppButtonType.warning:
           color = context.theme.warning;
           break;
-        case RilButtonType.success:
+        case AppButtonType.success:
           color = context.theme.predictors7;
           break;
       }
@@ -287,6 +287,6 @@ class AppButton extends StatelessWidget {
 
 enum AppButtonStyle { base, semiround, outline, outlineSemiround, none }
 
-enum RilButtonSize { small, normal, large }
+enum AppButtonSize { small, normal, large }
 
-enum RilButtonType { primary, secondary, danger, info, warning, success }
+enum AppButtonType { primary, secondary, danger, info, warning, success }

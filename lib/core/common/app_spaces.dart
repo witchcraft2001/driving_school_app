@@ -76,6 +76,7 @@ class AppSpaces {
   static const ph16v4 = EdgeInsets.symmetric(horizontal: sp16, vertical: sp4);
   static const ph16v8 = EdgeInsets.symmetric(horizontal: sp16, vertical: sp8);
   static const ph16v12 = EdgeInsets.symmetric(horizontal: sp16, vertical: sp12);
+  static const ph16v16 = EdgeInsets.symmetric(horizontal: sp16, vertical: sp16);
   static const ph16v48 = EdgeInsets.symmetric(horizontal: sp16, vertical: sp48);
 
   static const ph20v12 = EdgeInsets.symmetric(horizontal: sp20, vertical: sp12);

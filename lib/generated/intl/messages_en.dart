@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
+        "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Enter your e-mail"),
         "emailLabel": MessageLookupByLibrary.simpleMessage("Email:"),
         "enterSchoolNameHint":
@@ -31,12 +34,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeTitle": MessageLookupByLibrary.simpleMessage("Lesson plan"),
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
+        "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "passwordLabel": MessageLookupByLibrary.simpleMessage("Password:"),
+        "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "profileTitle": MessageLookupByLibrary.simpleMessage("My Profile"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectSchool":
             MessageLookupByLibrary.simpleMessage("Choose your Driving School:"),
+        "termsAndConditions":
+            MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
         "title": MessageLookupByLibrary.simpleMessage("Planny")
       };
 }

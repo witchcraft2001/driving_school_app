@@ -150,11 +150,81 @@ class S {
     );
   }
 
+  /// `My Profile`
+  String get profileTitle {
+    return Intl.message(
+      'My Profile',
+      name: 'profileTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Lesson plan`
   String get homeTitle {
     return Intl.message(
       'Lesson plan',
       name: 'homeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get changePassword {
+    return Intl.message(
+      'Change Password',
+      name: 'changePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms & Conditions`
+  String get termsAndConditions {
+    return Intl.message(
+      'Terms & Conditions',
+      name: 'termsAndConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logoutButton {
+    return Intl.message(
+      'Logout',
+      name: 'logoutButton',
       desc: '',
       args: [],
     );

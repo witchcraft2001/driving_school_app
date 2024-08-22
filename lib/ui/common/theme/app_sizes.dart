@@ -6,6 +6,7 @@ class AppSizes {
   static const double avatarSizeS = 24.0;
   static const double avatarSizeM = 32.0;
   static const double avatarSizeL = 48.0;
+  static const double avatarSizeXL = 64.0;
 
   // - texts
   static const double shimmerTextS = 12.0;

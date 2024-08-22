@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
+import 'package:planny/core/common/app_routes.dart';
 import 'package:planny/core/common/app_spaces.dart';
 import 'package:planny/core/common/extension/context.dart';
 import 'package:planny/core/domain/entity/lesson_entity.dart';
@@ -41,6 +42,7 @@ class HomeScreen extends StatelessWidget {
               state: state,
               onDateChanged: (value) =>
                   context.bloc<HomeBloc>().add(HomeEvent.onDateSelected(value)),
+              onProfileClicked: () => AppRoutes.pushProfile(context),
             ),
           );
         },
@@ -53,8 +55,13 @@ class HomeScreen extends StatelessWidget {
 class _HomeScreenInternal extends StatelessWidget {
   final HomeViewState state;
   final ValueChanged<DateTime> onDateChanged;
+  final Function() onProfileClicked;
 
-  const _HomeScreenInternal({super.key, required this.state, required this.onDateChanged});
+  const _HomeScreenInternal(
+      {super.key,
+      required this.state,
+      required this.onDateChanged,
+      required this.onProfileClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -62,11 +69,14 @@ class _HomeScreenInternal extends StatelessWidget {
       appBar: PlannyAppBar(
         title: S.current.homeTitle,
         actions: [
-          NetworkImageWithShimmer(
-            url: state.user.avatar,
-            width: AppSizes.avatarSizeM,
-            height: AppSizes.avatarSizeM,
-            borderRadius: AppDecoration.brAvatarL,
+          GestureDetector(
+            onTap: onProfileClicked,
+            child: NetworkImageWithShimmer(
+              url: state.user.avatar,
+              width: AppSizes.avatarSizeM,
+              height: AppSizes.avatarSizeM,
+              borderRadius: AppDecoration.brAvatarL,
+            ),
           ),
         ],
       ),
