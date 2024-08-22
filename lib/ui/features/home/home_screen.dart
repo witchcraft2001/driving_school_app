@@ -13,6 +13,7 @@ import 'package:planny/generated/l10n.dart';
 import 'package:planny/injection.dart';
 import 'package:planny/ui/common/app_bar.dart';
 import 'package:planny/ui/common/app_card.dart';
+import 'package:planny/ui/common/app_shimmer.dart';
 import 'package:planny/ui/common/app_shimmer_content.dart';
 import 'package:planny/ui/common/network_image_with_shimmer.dart';
 import 'package:planny/ui/common/theme/app_decoration.dart';
