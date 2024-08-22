@@ -26,4 +26,6 @@ class AppDecoration {
   static BorderRadius brTag = BorderRadius.circular(36.0);
 
   static BorderRadius brDialogIcon = BorderRadius.circular(44.0);
+
+  static BorderRadius brAvatarL = BorderRadius.circular(48.0);
 }

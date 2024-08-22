@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 class AppSpaces {
   AppSpaces._();
 
+  static const double sp2 = 2.0;
   static const double sp4 = 4.0;
+  static const double sp5 = 5.0;
+  static const double sp6 = 6.0;
   static const double sp8 = 8.0;
   static const double sp12 = 12.0;
   static const double sp16 = 16.0;
@@ -56,9 +59,12 @@ class AppSpaces {
   static const ph12 = EdgeInsets.symmetric(horizontal: sp12);
   static const ph16 = EdgeInsets.symmetric(horizontal: sp16);
   static const ph24 = EdgeInsets.symmetric(horizontal: sp24);
+  static const ph48 = EdgeInsets.symmetric(horizontal: sp48);
 
   static const ph12t16b24 = EdgeInsets.fromLTRB(sp12, sp16, sp12, sp24);
   static const ph12b24 = EdgeInsets.fromLTRB(sp12, 0.0, sp12, sp24);
+  static const ph16t16 = EdgeInsets.fromLTRB(sp16, sp16, sp16, 0.0);
+  static const ph16t16b4 = EdgeInsets.fromLTRB(sp16, sp16, sp16, sp4);
   static const ph24t4b16 = EdgeInsets.fromLTRB(sp24, sp4, sp24, sp16);
   static const ph24t76 = EdgeInsets.fromLTRB(sp24, sp76, sp24, 0.0);
   static const ph40t40 = EdgeInsets.fromLTRB(sp40, sp40, sp40, 0.0);

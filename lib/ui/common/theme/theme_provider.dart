@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 
 // Project imports:
 import 'app_colors.dart';
+import 'app_decoration.dart';
 import 'app_style.dart';
-import 'ril_decoration.dart';
 
 class ThemeProvider {
   static AppTheme lightTheme = AppTheme(
@@ -188,6 +188,9 @@ class ThemeProvider {
     return ThemeData(
       scaffoldBackgroundColor: lightTheme.backgroundDashboardsForms,
       brightness: Brightness.light,
+      colorScheme: ColorScheme.fromSwatch(
+        accentColor: lightTheme.accent,
+      ),
       appBarTheme: AppBarTheme(
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,

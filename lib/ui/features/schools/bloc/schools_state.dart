@@ -7,5 +7,6 @@ class SchoolsState with _$SchoolsState {
     required bool isLoading,
     String? error,
     required List<SchoolEntity> schools,
+    SchoolEntity? selectedSchool,
   }) = _Show;
 }

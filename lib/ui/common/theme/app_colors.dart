@@ -128,7 +128,7 @@ class AppTheme {
 }
 
 class AppColors {
-  static const int _baseMain = 0xFF4267EC;
+  static const int _baseMain = 0xFF479BEC;
   static const Color accent = Color(0xFFFA633B);
   static const Color primary = Color(_baseMain);
   static const Color specialColorWhiteBackground = Color(0xFFFFFFFF);
@@ -192,7 +192,7 @@ class AppColors {
 }
 
 class AppDarkColors {
-  static const int _baseMain = 0xFF4267EC;
+  static const int _baseMain = 0xFF479BEC;
   static const Color accent = Color(0xFFFA633B);
   static const Color primary = Color(_baseMain);
   static const Color specialColorWhiteBackground = Color(0xFF181d25);

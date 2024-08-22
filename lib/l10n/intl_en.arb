@@ -2,5 +2,13 @@
   "title": "Planny",
   "enterSchoolNameLabel": "Enter the Driving School name:",
   "enterSchoolNameHint": "Driving School name",
-  "search": "Search"
+  "search": "Search",
+  "passwordLabel": "Password:",
+  "passwordHint": "Enter your password",
+  "emailLabel": "Email:",
+  "emailHint": "Enter your e-mail",
+  "loginButton": "Login",
+  "loginTitle": "Login",
+  "homeTitle": "Lesson plan",
+  "selectSchool": "Choose your Driving School:"
 }

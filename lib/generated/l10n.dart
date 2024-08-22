@@ -89,6 +89,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Password:`
+  String get passwordLabel {
+    return Intl.message(
+      'Password:',
+      name: 'passwordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordHint {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email:`
+  String get emailLabel {
+    return Intl.message(
+      'Email:',
+      name: 'emailLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your e-mail`
+  String get emailHint {
+    return Intl.message(
+      'Enter your e-mail',
+      name: 'emailHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get loginButton {
+    return Intl.message(
+      'Login',
+      name: 'loginButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get loginTitle {
+    return Intl.message(
+      'Login',
+      name: 'loginTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lesson plan`
+  String get homeTitle {
+    return Intl.message(
+      'Lesson plan',
+      name: 'homeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your Driving School:`
+  String get selectSchool {
+    return Intl.message(
+      'Choose your Driving School:',
+      name: 'selectSchool',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -16,6 +16,7 @@ class AppTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final EdgeInsets? padding;
   final bool autofocus;
+  final bool obscureText;
   final TextEditingController? controller;
 
   const AppTextField({
@@ -34,6 +35,7 @@ class AppTextField extends StatefulWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.controller,
+    this.obscureText = false,
   });
 
   @override
@@ -68,6 +70,7 @@ class _AppTextFieldState extends State<AppTextField> {
     return Padding(
       padding: widget.padding ?? const EdgeInsets.all(0.0),
       child: TextField(
+        obscureText: widget.obscureText,
         autofocus: widget.autofocus,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.black, // context.appTheme?.appTheme.textMain,

@@ -16,6 +16,7 @@ class PlannyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Planny',
       darkTheme: ThemeProvider.darkThemeData(),
       theme: ThemeProvider.lightThemeData(),

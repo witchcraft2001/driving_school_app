@@ -1,16 +1,15 @@
 // Dart imports:
 import 'dart:io';
 
+// Flutter imports:
+import 'package:flutter/foundation.dart';
+
 // Package imports:
 import 'package:curl_logger_dio_interceptor/curl_logger_dio_interceptor.dart';
 import 'package:dio/dio.dart';
 
-// Flutter imports:
-import 'package:flutter/foundation.dart';
-
 // Project imports:
 import 'package:planny/core/common/exception/app_format_exception.dart';
-
 import '../../common/exception/app_exception.dart';
 import '../../common/exception/http_service_exception.dart';
 import 'log_service.dart';
