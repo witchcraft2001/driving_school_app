@@ -8,7 +8,7 @@ class FakeAuthInterceptor extends InterceptorsWrapper {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
-    const token = '18|XIRVfkW37Edt84aKZyLzMUHsw8irrUVJS5wEbS1eea47ed33';
+    const token = '20|AQxVsp8gVRXPugmAzdNxAPG7Dj5tNQmeBLzK67an68162482';
     options.headers['Authorization'] = 'Bearer $token';
 
     handler.next(options);
