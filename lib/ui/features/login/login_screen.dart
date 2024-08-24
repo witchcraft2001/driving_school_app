@@ -13,6 +13,7 @@ import 'package:planny/ui/common/app_bar.dart';
 import 'package:planny/ui/common/app_button.dart';
 import 'package:planny/ui/common/app_label.dart';
 import 'package:planny/ui/common/app_textfield.dart';
+import 'package:planny/ui/common/theme/theme_provider.dart';
 import 'package:planny/ui/features/login/bloc/login_view_state.dart';
 import '../../../core/common/app_assets.dart';
 import '../../../generated/l10n.dart';
@@ -38,11 +39,11 @@ class LoginScreen extends StatelessWidget {
                     emailController: _emailController,
                     passwordController: _passwordController,
                   ),
-              loggedIn: (_) => Container());
+              loggedIn: (_) => Container(color: context.theme.backgroundWidgetHeader,));
         },
         listener: (BuildContext context, LoginState state) {
           if (state is LoggedIn) {
-            AppRoutes.navigateToHome(context);
+            AppRoutes.replaceToHome(context);
           }
         },
       ),
@@ -56,7 +57,6 @@ class _LoginScreenInternal extends StatelessWidget {
   final TextEditingController passwordController;
 
   const _LoginScreenInternal({
-    super.key,
     required this.state,
     required this.emailController,
     required this.passwordController,
@@ -72,50 +72,55 @@ class _LoginScreenInternal extends StatelessWidget {
         ),
         onBackPressed: () => Navigator.of(context).pop(),
       ),
-      body: Padding(
-        padding: AppSpaces.p16,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AppLabel(
-              text: S.current.emailLabel,
+      body: state.isLoading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : Padding(
+              padding: AppSpaces.p16,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppLabel(
+                    text: S.current.emailLabel,
+                  ),
+                  AppTextField(
+                    controller: emailController,
+                    text: state.email,
+                    textInputAction: TextInputAction.next,
+                    hint: S.current.emailHint,
+                    onChanged: (value) {
+                      context.bloc<LoginBloc>().add(LoginEvent.onEmailChanged(value));
+                    },
+                  ),
+                  const SizedBox(
+                    height: AppSpaces.sp16,
+                  ),
+                  AppLabel(
+                    text: S.current.passwordLabel,
+                  ),
+                  AppTextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    text: state.password,
+                    textInputAction: TextInputAction.done,
+                    hint: S.current.passwordHint,
+                    onChanged: (value) {
+                      context.bloc<LoginBloc>().add(LoginEvent.onPasswordChanged(value));
+                    },
+                  ),
+                  const SizedBox(
+                    height: AppSpaces.sp32,
+                  ),
+                  AppButton(
+                    title: S.current.loginButton,
+                    onPressed: () =>
+                        context.bloc<LoginBloc>().add(const LoginEvent.onLoginClicked()),
+                  ),
+                ],
+              ),
             ),
-            AppTextField(
-              controller: emailController,
-              text: state.email,
-              textInputAction: TextInputAction.next,
-              hint: S.current.emailHint,
-              onChanged: (value) {
-                context.bloc<LoginBloc>().add(LoginEvent.onEmailChanged(value));
-              },
-            ),
-            const SizedBox(
-              height: AppSpaces.sp16,
-            ),
-            AppLabel(
-              text: S.current.passwordLabel,
-            ),
-            AppTextField(
-              obscureText: true,
-              controller: passwordController,
-              text: state.password,
-              textInputAction: TextInputAction.done,
-              hint: S.current.passwordHint,
-              onChanged: (value) {
-                context.bloc<LoginBloc>().add(LoginEvent.onPasswordChanged(value));
-              },
-            ),
-            const SizedBox(
-              height: AppSpaces.sp32,
-            ),
-            AppButton(
-              title: S.current.loginButton,
-              onPressed: () => context.bloc<LoginBloc>().add(const LoginEvent.onLoginClicked()),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

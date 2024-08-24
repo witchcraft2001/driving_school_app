@@ -6,10 +6,10 @@ import 'package:injectable/injectable.dart';
 import 'package:planny/core/data/interactor/auth_interactor.dart';
 
 @lazySingleton
-class AuthInterceptor extends InterceptorsWrapper {
+class AccessTokenInterceptor extends InterceptorsWrapper {
   final AuthInteractor _interactor;
 
-  AuthInterceptor(this._interactor);
+  AccessTokenInterceptor(this._interactor);
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {

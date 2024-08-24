@@ -35,12 +35,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
         "logoutButton": MessageLookupByLibrary.simpleMessage("Logout"),
+        "networkError": MessageLookupByLibrary.simpleMessage(
+            "A network error occurred, please try again later"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "passwordLabel": MessageLookupByLibrary.simpleMessage("Password:"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "profileTitle": MessageLookupByLibrary.simpleMessage("My Profile"),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectSchool":
             MessageLookupByLibrary.simpleMessage("Choose your Driving School:"),

@@ -8,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:planny/core/common/app_routes.dart';
 import 'package:planny/ui/common/theme/theme_provider.dart';
 import 'package:planny/ui/features/schools/schools_screen.dart';
+import 'package:planny/ui/features/splash/splash_screen.dart';
 import 'generated/l10n.dart';
 
 class PlannyApp extends StatelessWidget {
@@ -20,7 +21,7 @@ class PlannyApp extends StatelessWidget {
       title: 'Planny',
       darkTheme: ThemeProvider.darkThemeData(),
       theme: ThemeProvider.lightThemeData(),
-      home: SchoolsScreen(),
+      home: const SplashScreen(),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

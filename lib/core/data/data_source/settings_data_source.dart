@@ -32,4 +32,5 @@ class SettingsDataSource {
 class SettingsRepositoryKeys {
   static const String user = 'user';
   static const String school = 'school';
+  static const String refreshToken = 'refresh_token';
 }

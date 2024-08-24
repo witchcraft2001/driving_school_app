@@ -230,6 +230,26 @@ class S {
     );
   }
 
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A network error occurred, please try again later`
+  String get networkError {
+    return Intl.message(
+      'A network error occurred, please try again later',
+      name: 'networkError',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Choose your Driving School:`
   String get selectSchool {
     return Intl.message(

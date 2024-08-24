@@ -1,8 +1,8 @@
 // Project imports:
-import 'package:planny/core/data/model/access_token_response.dart';
-import 'package:planny/core/domain/entity/access_token_entity.dart';
+import 'package:planny/core/data/model/login_response.dart';
+import 'package:planny/core/domain/entity/access_refresh_token_entity.dart';
 
-extension AccessTokenResponseMapper on AccessTokenResponse {
-  AccessTokenEntity toDomain() =>
-      AccessTokenEntity(accessToken: accessToken, refreshToken: refreshToken);
+extension AccessTokenResponseMapper on LoginResponse {
+  AccessRefreshTokenEntity toDomain() =>
+      AccessRefreshTokenEntity(accessToken: accessToken, refreshToken: refreshToken);
 }

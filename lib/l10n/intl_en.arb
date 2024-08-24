@@ -17,5 +17,7 @@
   "editProfile": "Edit Profile",
   "termsAndConditions": "Terms & Conditions",
   "logoutButton": "Logout",
+  "retry": "Retry",
+  "networkError": "A network error occurred, please try again later",
   "selectSchool": "Choose your Driving School:"
 }

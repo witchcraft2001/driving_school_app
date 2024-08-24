@@ -18,4 +18,6 @@ class SelectedSchoolInteractor {
     _school = school;
     await _repository.setSelectedSchool(school);
   }
+
+  Future<bool> remove() => _repository.removeSelectedSchool();
 }

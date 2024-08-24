@@ -3,24 +3,39 @@ import 'package:injectable/injectable.dart';
 
 // Project imports:
 import 'package:planny/core/data/repository/auth_repository.dart';
-import 'package:planny/core/domain/entity/access_token_entity.dart';
+import 'package:planny/core/data/repository/settings_repository.dart';
 
 @lazySingleton
 class AuthInteractor {
   final AuthRepository _repository;
+  final SettingsRepository _settingsRepository;
   String? _accessToken;
-  String? _refreshToken;
 
-  AuthInteractor(this._repository);
+  AuthInteractor(this._repository, this._settingsRepository);
 
-  Future<AccessTokenEntity> login(String email, String password) async {
+  Future<bool> login(String email, String password) async {
     final result = await _repository.login(email, password);
     _accessToken = result.accessToken;
-    _refreshToken = result.refreshToken;
+    await _settingsRepository.setRefreshToken(result.refreshToken);
+
+    return true;
+  }
+
+  Future<String> refreshToken() async {
+    final result = await _repository.refreshToken();
+    _accessToken = result;
+
     return result;
   }
 
-  String? get accessToken => _accessToken;
+  Future<bool> isUserAuthorized() async {
+    final school = _settingsRepository.getSelectedSchool();
+    final refreshToken = await _settingsRepository.getRefreshToken();
 
-  String? get refreshToken => _refreshToken;
+    return school != null && refreshToken != null;
+  }
+
+  Future<void> removeToken() => _settingsRepository.removeRefreshToken();
+
+  String? get accessToken => _accessToken;
 }
