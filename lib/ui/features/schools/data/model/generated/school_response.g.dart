@@ -8,11 +8,11 @@ part of '../school_response.dart';
 
 SchoolResponse _$SchoolResponseFromJson(Map<String, dynamic> json) =>
     SchoolResponse(
-      (json['id'] as num).toInt(),
-      json['name'] as String,
-      json['domain'] as String,
-      json['url'] as String,
-      json['status'] as String,
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      domain: json['domain'] as String,
+      url: json['url'] as String,
+      status: json['status'] as String,
     );
 
 Map<String, dynamic> _$SchoolResponseToJson(SchoolResponse instance) =>

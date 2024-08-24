@@ -28,4 +28,8 @@ class AppDecoration {
   static BorderRadius brDialogIcon = BorderRadius.circular(44.0);
 
   static BorderRadius brAvatarL = BorderRadius.circular(48.0);
+
+  static ShapeBorder snackBarBorder = RoundedRectangleBorder(
+    borderRadius: brBtnSmall
+  );
 }

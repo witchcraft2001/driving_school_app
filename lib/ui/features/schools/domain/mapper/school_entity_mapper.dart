@@ -4,10 +4,10 @@ import 'package:planny/ui/features/schools/domain/entity/school_entity.dart';
 
 extension SchoolEntityMapper on SchoolEntity {
   SchoolResponse toResponse() => SchoolResponse(
-        id,
-        domain,
-        url,
-        name,
-        status,
+        id: id,
+        domain: domain,
+        url: url,
+        name: name,
+        status: status,
       );
 }

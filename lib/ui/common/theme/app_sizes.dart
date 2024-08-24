@@ -17,6 +17,8 @@ class AppSizes {
   static const double toolbarHeight = 56.0;
   static const double toolbarLogoHeight = 44.0;
 
+  static const double splashLogoMaxWidth = 200.0;
+
   static const double lessonCardHeight = 64.0;
 
   static const double schoolUrlBaseWidth = 64.0;

@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 // Project imports:
 import 'package:planny/core/data/model/instructor_response.dart';
+import 'package:planny/core/data/model/product_response.dart';
 import 'package:planny/core/data/model/vehicle_response.dart';
 import 'pagination_response.dart';
 
@@ -52,6 +53,8 @@ class LessonResponse {
   final InstructorResponse instructor;
   @JsonKey(name: 'vehicle')
   final VehicleResponse? vehicle;
+  @JsonKey(name: 'product')
+  final ProductResponse product;
 
   factory LessonResponse.fromJson(Map<String, dynamic> json) => _$LessonResponseFromJson(json);
 
@@ -77,6 +80,7 @@ class LessonResponse {
     required this.borderColor,
     required this.instructor,
     required this.vehicle,
+    required this.product,
   });
 
   Map<String, dynamic> toJson() => _$LessonResponseToJson(this);

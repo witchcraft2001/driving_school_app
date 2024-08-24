@@ -1,5 +1,6 @@
 // Project imports:
 import 'package:planny/core/domain/entity/instructor_entity.dart';
+import 'package:planny/core/domain/entity/product_entity.dart';
 import 'vehicle_entity.dart';
 
 class LessonEntity {
@@ -20,10 +21,11 @@ class LessonEntity {
   final String? address;
   final String type;
   final int calendar;
-  final String backgroundColor;
-  final String borderColor;
+  final int backgroundColor;
+  final int borderColor;
   final InstructorEntity instructor;
   final VehicleEntity? vehicle;
+  final ProductEntity product;
 
   LessonEntity({
     required this.id,
@@ -47,5 +49,6 @@ class LessonEntity {
     required this.borderColor,
     required this.instructor,
     required this.vehicle,
+    required this.product,
   });
 }

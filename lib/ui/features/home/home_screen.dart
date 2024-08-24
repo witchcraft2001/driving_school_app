@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // Project imports:
 import 'package:planny/core/common/app_routes.dart';
@@ -58,11 +59,11 @@ class _HomeScreenInternal extends StatelessWidget {
   final ValueChanged<DateTime> onDateChanged;
   final Function() onProfileClicked;
 
-  const _HomeScreenInternal(
-      {super.key,
-      required this.state,
-      required this.onDateChanged,
-      required this.onProfileClicked});
+  const _HomeScreenInternal({
+    required this.state,
+    required this.onDateChanged,
+    required this.onProfileClicked,
+  });
 
   @override
   Widget build(BuildContext context) {

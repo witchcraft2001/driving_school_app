@@ -16,12 +16,17 @@ class SchoolResponse {
   @JsonKey(name: 'status')
   final String status;
 
-  factory SchoolResponse.fromJson(Map<String, dynamic> json) =>
-      _$SchoolResponseFromJson(json);
+  factory SchoolResponse.fromJson(Map<String, dynamic> json) => _$SchoolResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$SchoolResponseToJson(this);
 
-  SchoolResponse(this.id, this.name, this.domain, this.url, this.status);
+  SchoolResponse({
+    required this.id,
+    required this.name,
+    required this.domain,
+    required this.url,
+    required this.status,
+  });
 }
 
 class SchoolListResponse {
@@ -30,8 +35,6 @@ class SchoolListResponse {
   SchoolListResponse(this.list);
 
   SchoolListResponse.fromMappedJson(List<dynamic>? json) {
-    list = json != null
-        ? json.map((e) => SchoolResponse.fromJson(e)).toList()
-        : List.empty();
+    list = json != null ? json.map((e) => SchoolResponse.fromJson(e)).toList() : List.empty();
   }
 }

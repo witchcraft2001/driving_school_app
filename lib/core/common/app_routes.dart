@@ -7,8 +7,6 @@ import 'package:planny/ui/features/login/login_screen.dart';
 import 'package:planny/ui/features/profile/profile_screen.dart';
 import 'package:planny/ui/features/schools/schools_screen.dart';
 
-// Project imports:
-
 class AppRoutes {
   AppRoutes._();
 
@@ -28,6 +26,14 @@ class AppRoutes {
     return null;
   }
 
+  static Future<Object?> replaceToSelectSchool(BuildContext context) async {
+    return await Navigator.of(context).pushNamedAndRemoveUntil(selectSchool, (e) => false);
+  }
+
+  static Future<Object?> replaceToLogin(BuildContext context) async {
+    return await Navigator.of(context).pushReplacementNamed(login);
+  }
+
   static Future<Object?> pushLogin(BuildContext context) async {
     return await Navigator.of(context).pushNamed(login);
   }
@@ -36,7 +42,7 @@ class AppRoutes {
     return await Navigator.of(context).pushNamed(profile);
   }
 
-  static Future<Object?> navigateToHome(BuildContext context) async {
+  static Future<Object?> replaceToHome(BuildContext context) async {
     return await Navigator.of(context).pushNamedAndRemoveUntil(home, (e) => false);
   }
 }

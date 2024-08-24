@@ -32,6 +32,8 @@ LessonResponse _$LessonResponseFromJson(Map<String, dynamic> json) =>
       vehicle: json['vehicle'] == null
           ? null
           : VehicleResponse.fromJson(json['vehicle'] as Map<String, dynamic>),
+      product:
+          ProductResponse.fromJson(json['product'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$LessonResponseToJson(LessonResponse instance) =>
@@ -57,4 +59,5 @@ Map<String, dynamic> _$LessonResponseToJson(LessonResponse instance) =>
       'border_color': instance.borderColor,
       'instructor': instance.instructor.toJson(),
       'vehicle': instance.vehicle?.toJson(),
+      'product': instance.product.toJson(),
     };
