@@ -2,7 +2,9 @@
 
 Driving School App
 
-![Home](./screenshots/home_screen.png "Home Screen")
+| Home Screen | Profile Screen                                                |
+| ----------- |---------------------------------------------------------------|
+| ![Home](./screenshots/home_screen.png "Home Screen") | ![Profile](./screenshots/profile_screen.png "Profile Screen") | 
 
 Application for Driving School Students for view and managing their schedule, schedule lessons with an instructor, view news about the Driving School, receive notifications and etc.
 
