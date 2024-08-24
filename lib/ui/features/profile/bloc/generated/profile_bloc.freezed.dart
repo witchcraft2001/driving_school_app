@@ -19,32 +19,38 @@ mixin _$ProfileEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLogoutClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLogoutClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLogoutClicked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_OnLogoutClicked value) onLogoutClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_OnLogoutClicked value)? onLogoutClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_OnLogoutClicked value)? onLogoutClicked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLogoutClicked,
   }) {
     return started();
   }
@@ -121,6 +128,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLogoutClicked,
   }) {
     return started?.call();
   }
@@ -129,6 +137,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLogoutClicked,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -141,6 +150,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_OnLogoutClicked value) onLogoutClicked,
   }) {
     return started(this);
   }
@@ -149,6 +159,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_OnLogoutClicked value)? onLogoutClicked,
   }) {
     return started?.call(this);
   }
@@ -157,6 +168,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_OnLogoutClicked value)? onLogoutClicked,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,45 +183,149 @@ abstract class _Started implements ProfileEvent {
 }
 
 /// @nodoc
+abstract class _$$OnLogoutClickedImplCopyWith<$Res> {
+  factory _$$OnLogoutClickedImplCopyWith(_$OnLogoutClickedImpl value,
+          $Res Function(_$OnLogoutClickedImpl) then) =
+      __$$OnLogoutClickedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnLogoutClickedImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$OnLogoutClickedImpl>
+    implements _$$OnLogoutClickedImplCopyWith<$Res> {
+  __$$OnLogoutClickedImplCopyWithImpl(
+      _$OnLogoutClickedImpl _value, $Res Function(_$OnLogoutClickedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$OnLogoutClickedImpl implements _OnLogoutClicked {
+  const _$OnLogoutClickedImpl();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.onLogoutClicked()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnLogoutClickedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onLogoutClicked,
+  }) {
+    return onLogoutClicked();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onLogoutClicked,
+  }) {
+    return onLogoutClicked?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onLogoutClicked,
+    required TResult orElse(),
+  }) {
+    if (onLogoutClicked != null) {
+      return onLogoutClicked();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_OnLogoutClicked value) onLogoutClicked,
+  }) {
+    return onLogoutClicked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnLogoutClicked value)? onLogoutClicked,
+  }) {
+    return onLogoutClicked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_OnLogoutClicked value)? onLogoutClicked,
+    required TResult orElse(),
+  }) {
+    if (onLogoutClicked != null) {
+      return onLogoutClicked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnLogoutClicked implements ProfileEvent {
+  const factory _OnLogoutClicked() = _$OnLogoutClickedImpl;
+}
+
+/// @nodoc
 mixin _$ProfileState {
-  UserEntity get user => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserEntity user) initial,
+    required TResult Function() loggedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserEntity user)? initial,
+    TResult? Function()? loggedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserEntity user)? initial,
+    TResult Function()? loggedOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(LoggedOut value) loggedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(LoggedOut value)? loggedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(LoggedOut value)? loggedOut,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of ProfileState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ProfileStateCopyWith<ProfileState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -218,8 +334,6 @@ abstract class $ProfileStateCopyWith<$Res> {
   factory $ProfileStateCopyWith(
           ProfileState value, $Res Function(ProfileState) then) =
       _$ProfileStateCopyWithImpl<$Res, ProfileState>;
-  @useResult
-  $Res call({UserEntity user});
 }
 
 /// @nodoc
@@ -234,27 +348,13 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? user = null,
-  }) {
-    return _then(_value.copyWith(
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserEntity,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res>
-    implements $ProfileStateCopyWith<$Res> {
+abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
           _$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({UserEntity user});
 }
@@ -319,6 +419,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserEntity user) initial,
+    required TResult Function() loggedOut,
   }) {
     return initial(user);
   }
@@ -327,6 +428,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserEntity user)? initial,
+    TResult? Function()? loggedOut,
   }) {
     return initial?.call(user);
   }
@@ -335,6 +437,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserEntity user)? initial,
+    TResult Function()? loggedOut,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -347,6 +450,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(LoggedOut value) loggedOut,
   }) {
     return initial(this);
   }
@@ -355,6 +459,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(LoggedOut value)? loggedOut,
   }) {
     return initial?.call(this);
   }
@@ -363,6 +468,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(LoggedOut value)? loggedOut,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -375,13 +481,116 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements ProfileState {
   const factory _Initial(final UserEntity user) = _$InitialImpl;
 
-  @override
   UserEntity get user;
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoggedOutImplCopyWith<$Res> {
+  factory _$$LoggedOutImplCopyWith(
+          _$LoggedOutImpl value, $Res Function(_$LoggedOutImpl) then) =
+      __$$LoggedOutImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoggedOutImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$LoggedOutImpl>
+    implements _$$LoggedOutImplCopyWith<$Res> {
+  __$$LoggedOutImplCopyWithImpl(
+      _$LoggedOutImpl _value, $Res Function(_$LoggedOutImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoggedOutImpl implements LoggedOut {
+  const _$LoggedOutImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState.loggedOut()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoggedOutImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserEntity user) initial,
+    required TResult Function() loggedOut,
+  }) {
+    return loggedOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserEntity user)? initial,
+    TResult? Function()? loggedOut,
+  }) {
+    return loggedOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserEntity user)? initial,
+    TResult Function()? loggedOut,
+    required TResult orElse(),
+  }) {
+    if (loggedOut != null) {
+      return loggedOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoggedOut value) loggedOut,
+  }) {
+    return loggedOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoggedOut value)? loggedOut,
+  }) {
+    return loggedOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoggedOut value)? loggedOut,
+    required TResult orElse(),
+  }) {
+    if (loggedOut != null) {
+      return loggedOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoggedOut implements ProfileState {
+  const factory LoggedOut() = _$LoggedOutImpl;
 }

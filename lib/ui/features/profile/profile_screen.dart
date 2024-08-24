@@ -7,7 +7,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // Project imports:
 import 'package:planny/core/common/app_assets.dart';
+import 'package:planny/core/common/app_routes.dart';
 import 'package:planny/core/common/app_spaces.dart';
+import 'package:planny/core/common/extension/context.dart';
 import 'package:planny/core/domain/entity/user_entity.dart';
 import 'package:planny/generated/l10n.dart';
 import 'package:planny/injection.dart';
@@ -29,14 +31,22 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => getIt<ProfileBloc>()..add(const ProfileEvent.started()),
-      child: BlocConsumer<ProfileBloc, ProfileState>(
-        builder: (BuildContext context, ProfileState state) => _ProfileScreenInternal(
-          user: state.user,
-        ),
-        listener: (BuildContext context, ProfileState state) {},
-      ),
-    );
+        create: (BuildContext context) => getIt<ProfileBloc>()..add(const ProfileEvent.started()),
+        child: BlocConsumer<ProfileBloc, ProfileState>(
+          builder: (BuildContext context, ProfileState state) => state.when(
+            initial: (user) => _ProfileScreenInternal(
+              user: user,
+            ),
+            loggedOut: () => Container(
+              color: context.theme.backgroundWidgetHeader,
+            ),
+          ),
+          listener: (BuildContext context, ProfileState state) {
+            if (state is LoggedOut) {
+              AppRoutes.replaceToSelectSchool(context);
+            }
+          },
+        ));
   }
 }
 
@@ -52,7 +62,11 @@ class _ProfileScreenInternal extends StatelessWidget {
         title: S.current.profileTitle,
         onBackPressed: () => Navigator.of(context).pop(),
       ),
-      body: _ProfileContent(user: user,),
+      body: _ProfileContent(
+        user: user,
+        onLogoutClicked: () =>
+            context.bloc<ProfileBloc>().add(const ProfileEvent.onLogoutClicked()),
+      ),
     );
   }
 }

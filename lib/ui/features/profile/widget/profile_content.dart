@@ -2,8 +2,9 @@ part of '../profile_screen.dart';
 
 class _ProfileContent extends StatelessWidget {
   final UserEntity user;
+  final Function() onLogoutClicked;
 
-  const _ProfileContent({required this.user});
+  const _ProfileContent({required this.user, required this.onLogoutClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -115,6 +116,7 @@ class _ProfileContent extends StatelessWidget {
             AppAssets.iconLogout,
             colorFilter: ColorFilter.mode(context.theme.primary, BlendMode.srcIn),
           ),
+          onPressed: onLogoutClicked,
         ),
         const SizedBox(
           height: AppSpaces.sp16,
